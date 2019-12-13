@@ -7,6 +7,6 @@ service:
 deploy:
   name: flights-api
   replicas: 1
-  acrServer: "youracr.azurecr.io"
+  acrServer: "fernando31300.eastus.cloudapp.azure.com"
   imageTag: "1.0"
   containerPort: 3003
