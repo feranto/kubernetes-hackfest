@@ -16,3 +16,25 @@ This lab walks you through migrating the services tracker microservices app to t
 ## Instructions
 
 1. Push all the service tracker docker images to Dockerhub
+
+    ```bash
+    #set variables for docker authentication
+    DOCKER_USERNAME=<YOUR_USERNAME>
+    DOCKER_PASSWORD=<YOUR_PASSWORD>
+    #login with your docker credentials
+    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+    #build the images locally
+    docker build -t $DOCKER_USERNAME/data-api:1.0 app/data-api
+    docker build -t $DOCKER_USERNAME/flights-api:1.0 app/flights-api
+    docker build -t $DOCKER_USERNAME/quakes-api:1.0 app/quakes-api
+    docker build -t $DOCKER_USERNAME/weather-api:1.0 app/weather-api
+    docker build -t $DOCKER_USERNAME/service-tracker-ui:1.0 app/service-tracker-ui
+
+    #push the images to your dockerhub repo
+    docker push $DOCKER_USERNAME/data-api:1.0
+    docker push $DOCKER_USERNAME/flights-api:1.0
+    docker push $DOCKER_USERNAME/quakes-api:1.0 
+    docker push $DOCKER_USERNAME/weather-api:1.0 
+    docker push $DOCKER_USERNAME/service-tracker-ui:1.0
+    ```
