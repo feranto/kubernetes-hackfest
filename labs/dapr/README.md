@@ -38,3 +38,10 @@ This lab walks you through migrating the services tracker microservices app to t
     docker push $DOCKER_USERNAME/weather-api:1.0 
     docker push $DOCKER_USERNAME/service-tracker-ui:1.0
     ```
+2.  Then we need to add the cosmosdb dapr component to our application
+
+    ```bash
+    
+    ```
+
+3.  Now we modify our data-api helm chart in order for it to work with dapr
