@@ -15,4 +15,4 @@ This lab walks you through migrating the services tracker microservices app to t
 
 ## Instructions
 
-1. Push all the service tracker docker images to Dockerhub.
+1. Push all the service tracker docker images to Dockerhub
