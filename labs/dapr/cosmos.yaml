@@ -9,11 +9,11 @@ spec:
     value: <REPLACE-WITH-URL>
   - name: username
     secretKeyRef:
-    	name: redis-secret
+      name: redis-secret
       key:  redis-password
   - name: password
     secretKeyRef:
-    	name: redis-secret
+      name: redis-secret
       key:  redis-password
   - name: masterKey
     value: <REPLACE-WITH-MASTER-KEY>
