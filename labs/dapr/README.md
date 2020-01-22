@@ -41,7 +41,29 @@ This lab walks you through migrating the services tracker microservices app to t
 2.  Then we need to add the cosmosdb dapr component to our application
 
     ```bash
-    
+    apiVersion: dapr.io/v1alpha1
+    kind: Component
+    metadata:
+    name: <name>
+    spec:
+    type: state.azure.cosmosdb
+    metadata:
+    - name: url
+        value: <REPLACE-WITH-URL>
+    - name: username
+        secretKeyRef:
+        name: redis-secret
+        key:  redis-password
+    - name: password
+        secretKeyRef:
+        name: redis-secret
+        key:  redis-password
+    - name: masterKey
+        value: <REPLACE-WITH-MASTER-KEY>
+    - name: database
+        value: <REPLACE-WITH-DATABASE>
+    - name: collection
+        value: <REPLACE-WITH-COLLECTION>
     ```
 
 3.  Now we modify our data-api helm chart in order for it to work with dapr
